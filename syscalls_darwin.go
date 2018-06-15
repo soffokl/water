@@ -186,8 +186,8 @@ func (t *tunReadCloser) Write(from []byte) (int, error) {
 
 func (t *tunReadCloser) Close() error {
 	// lock to make sure no read/write is in process.
-	t.rMu.Lock()
-	defer t.rMu.Unlock()
+	// t.rMu.Lock()
+	// defer t.rMu.Unlock()
 	t.wMu.Lock()
 	defer t.wMu.Unlock()
 
